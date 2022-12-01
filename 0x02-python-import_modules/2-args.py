@@ -1,20 +1,13 @@
 #!/usr/bin/python3
-
-
-def print_arg_list():
+if __name__ == '__main__':
     from sys import argv
-    argc = len(argv)
-    i = 1
-    if argc == 1:
-        print("{:d} arguments.".format(argc - 1))
-    elif argc == 2:
-        print("{:d} argument:".format(argc - 1))
-    else:
-        print("{:d} arguments:".format(argc - 1))
-    while i < argc:
-        print("{:d}: {:s}".format(i, argv[i]))
-        i += 1
-
-
-if __name__ == "__main__":
-    print_arg_list()
+    na = len(argv) - 1  # na == nr of args, excluding the command
+    s = "s"             # optional plural
+    if na == 1:
+        s = ""
+    end = "."
+    if na != 0:
+        end = ":"
+    print(f"{na:d} argument{s}{end}")
+    for arg in range(1, na + 1):
+        print(f"{arg}: {argv[arg]}")

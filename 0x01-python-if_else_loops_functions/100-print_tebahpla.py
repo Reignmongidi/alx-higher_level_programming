@@ -1,11 +1,9 @@
 #!/usr/bin/python3
-i = 122
-while i >= 97:
-    flag = 0
-    if i % 2 != 0:
-        i = i - 32
-        flag = 1
-    print("{:s}".format(chr(i)), end="")
-    if flag == 1:
-        i = i + 32
-    i = i - 1
+lower = True
+for i in range(26):
+    if lower:
+        print("{:c}".format(97 + (25-i)), end="")
+        lower = False
+    else:
+        print("{:c}".format(65 + (25-i)), end="")
+        lower = True

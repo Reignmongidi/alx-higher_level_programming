@@ -1,3 +1,2 @@
-ALX python-import_modules project.
-***
-This project demonstrates my understanding of Python modules.
+alx-higher_level_programming.git
+0x02-python-import_modules

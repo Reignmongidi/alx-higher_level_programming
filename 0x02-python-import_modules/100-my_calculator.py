@@ -1,29 +1,29 @@
 #!/usr/bin/python3
-
-from calculator_1 import add, sub, mul, div
-
-
-def arg_calc():
+if __name__ == '__main__':
     from sys import argv
-    n = len(argv) - 1
-    if n != 3:
-        print("Usage: ./100-my_calculator.py <a> <operator> <b>")
+    from calculator_1 import add, sub, mul, div
+
+    argc = len(argv)
+    if argc != 4:
+        print(f"Usage: ./100-my_calculator.py <a> <operator> <b>")
         exit(1)
+    elif not ("+-*/".__contains__(argv[2])):
+        print(f"Unknown operator. Available operators: +, -, * and /")
+        exit(1)
+
     a = int(argv[1])
-    op = argv[2]
     b = int(argv[3])
-    if op == '+':
-        print("{:d} {:s} {:d} = {:d}".format(a, op, b, add(a, b)))
-    elif op == '-':
-        print("{:d} {:s} {:d} = {:d}".format(a, op, b, sub(a, b)))
-    elif op == '*':
-        print("{:d} {:s} {:d} = {:d}".format(a, op, b, mul(a, b)))
-    elif op == '/':
-        print("{:d} {:s} {:d} = {:d}".format(a, op, b, div(a, b)))
-    else:
-        print("Unknown operator. Available operators: +, -, * and /")
-        exit(1)
-
-
-if __name__ == "__main__":
-    arg_calc()
+    op = argv[2]
+    match op:
+        case "+":
+            c = a + b
+            print("{} + {} = {}".format(a, b, c))
+        case "-":
+            c = a - b
+            print("{} - {} = {}".format(a, b, c))
+        case "*":
+            c = a * b
+            print("{} * {} = {}".format(a, b, c))
+        case "/":
+            c = a / b
+            print("{} / {} = {}".format(a, b, c))

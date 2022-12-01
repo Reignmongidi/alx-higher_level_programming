@@ -1,17 +1,9 @@
 #!/usr/bin/python3
+if __name__ == '__main__':
+    from sys import argv
 
-from sys import argv
-
-
-def add_cli_args():
-    argc = len(argv)
-    i = 1
-    sum = 0
-    while i < argc:
-        sum += int(argv[i])
-        i += 1
-    print(f"{sum}")
-
-
-if __name__ == "__main__":
-    add_cli_args()
+    na = len(argv)  # na == nr of args, excluding the command
+    total = 0
+    for arg in range(1, na):
+        total += int(argv[arg])
+    print(f"{total:d}")

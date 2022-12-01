@@ -1,0 +1,5 @@
+#!/bin/bash
+echo "Compilining "$PYFILE ...
+python3 101-compile.py
+chmod +x "$PYFILE"c
+
